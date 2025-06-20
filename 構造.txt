@@ -1,0 +1,64 @@
+attendance-app/
+├── App.tsx                       # アプリのエントリーポイント
+├── app.json                      # Expoの設定ファイル
+├── assets/                       # 画像・アイコンなどの静的ファイル
+│   ├── icon.png
+│   └── splash.png
+├── components/                   # 再利用可能なUI部品
+│   ├── ClassCard.tsx
+│   └── AttendanceStatus.tsx
+├── constants/                    # 定数（URLやWi-Fi名など）
+│   └── config.ts
+├── contexts/                     # グローバルステート管理（例: ユーザー）
+│   └── UserContext.tsx
+├── hooks/                        # カスタムフック
+│   └── useSchedule.ts
+├── screens/                      # 各画面（ページ）
+│   ├── HomeScreen.tsx
+│   ├── RegisterScreen.tsx
+│   ├── WebAttendanceScreen.tsx
+│   ├── LoginScreen.tsx
+│   └── SettingsScreen.tsx
+├── services/                     # API通信や出席処理
+│   ├── api.ts                    # MariaDBとの通信
+│   ├── auth.ts                   # SecureStoreによる認証情報管理
+│   ├── attendance.ts             # 出席判定処理
+│   └── historyApi.ts             # 出席履歴取得API
+├── storage/                      # ローカル保存（AsyncStorageなど）
+│   └── localAttendance.ts
+├── types/                        # アプリ全体の型定義
+│   ├── Class.ts                  # 授業データ型
+│   └── User.ts                   # ユーザー型（ログイン情報など）
+├── utils/                        # 汎用関数
+│   └── time.ts
+├── package.json                  # 依存パッケージ
+└── tsconfig.json                 # TypeScript設定
+
+attendance-app/
+├── App.tsx                     # アプリのエントリーポイント
+├── app.json                   # Expoの設定ファイル
+├── assets/                    # 画像・アイコンなどの静的ファイル
+│   └── icon.png
+├── components/                # 再利用可能なUI部品
+│   ├── ClassCard.tsx
+│   └── AttendanceStatus.tsx
+├── screens/                   # 各画面（ページ）
+│   ├── HomeScreen.tsx         # 授業一覧・出席状況
+│   ├── RegisterScreen.tsx     # 授業登録画面
+│   └── WebAttendanceScreen.tsx # 出席ページを表示するWebView
+│   ├── LoginScreen.tsx         # ログインID/パスワード登録画面
+│   └── SettingsScreen.tsx      # ユーザー情報の確認・削除
+├── services/                  # API通信や出席処理
+│   ├── api.ts                 # MariaDB連携用API
+│   ├── auth.ts                 # SecureStoreでの認証情報管理
+│   ├── attendance.ts           # 出席処理 + 当日保存
+│   └── historyApi.ts           # MariaDBから過去の出席履歴取得
+├── storage/
+│   └── localAttendance.ts      # AsyncStorageで当日分を保存・削除
+├── utils/                     # 汎用関数
+│   └── time.ts                # 時間判定・スケジューリング
+├── hooks/                     # カスタムフック
+│   └── useSchedule.ts         # 授業スケジュール管理
+├── constants/                 # 定数（URLやWi-Fi名など）
+│   └── config.ts
+└── package.json               # 依存パッケージ管理
